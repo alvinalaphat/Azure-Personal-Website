@@ -35,7 +35,8 @@ and is wrapped around the whole page content, except for the footer in this exam
 
   <!-- Image header -->
   <header class="w3-display-container w3-wide" id="home">
-    <img class="w3-image" src="./static/images/tedx.jpg" alt="Fashion Blog" width="1600" height="500">
+    <img class="w3-image mySlides w3-animate-right" src="./static/images/tedx.jpg" alt="tedx" width="1600" height="500">
+    <img class="w3-image mySlides w3-animate-right" src="./static/images/service.jpg" alt="service" width="1600" height="500">
     <div class="w3-display-left w3-padding-large">
       <h1 class="w3-text-white">Alvin's</h1>
       <h1 class="w3-jumbo w3-text-white w3-hide-small"><b>Personal Website</b></h1>
@@ -322,7 +323,22 @@ and is wrapped around the whole page content, except for the footer in this exam
 </footer>
 
 <script>
-// Toggle between hiding and showing blog replies/comments
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 3000);    
+}
+
 document.getElementById("myBtn").click();
 function myFunction(id) {
   var x = document.getElementById(id);
