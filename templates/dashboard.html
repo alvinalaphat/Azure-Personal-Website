@@ -1,19 +1,64 @@
 <!DOCTYPE html>
 <html>
-<title>Alvin Alaphat</title>
-<script src="https://www.w3schools.com/lib/w3.js"></script>
+<head>
+    <title>Alvin Alaphat</title>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+</head>
+
+<style>
+    body,h1 {
+        font-family: "Raleway", sans-serif;
+    }
+
+    body, html {
+        height: 100%;
+    }
+
+    .bgimg {
+        background-image: url('/w3images/forestbridge.jpg');
+        min-height: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+
+</style>
 <body>
 
-<h2>Welcome to my personal website</h2>
+    <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+        <div class="w3-display-topleft w3-padding-large w3-xlarge">
+          Logo
+        </div>
+        <div class="w3-display-middle">
+          <h1 class="w3-jumbo w3-animate-top">Alvin Alaphat</h1>
+          <hr class="w3-border-grey" style="margin:auto;width:40%">
+          <p class="w3-large w3-center">35 days left</p>
+        </div>
+        <div class="w3-display-bottomleft w3-padding-large">
+        </div>
+      </div>
 
-<p>Who I am: </p>
-
-<h1 class="me w3-animate-left">Eagle Scout</h1>
+<!-- <h1 class="me w3-animate-left">Eagle Scout</h1>
 <h1 class="me w3-animate-left">Soccer Player</h1>
-<h1 class="me w3-animate-left">Music Artist</h1>
+<h1 class="me w3-animate-left">Music Artist</h1> -->
 
 <script>
-w3.slideshow(".me", 5000);
+// w3.slideshow(".me", 5000);
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2500);    
+}
 </script>
 
 </body>
