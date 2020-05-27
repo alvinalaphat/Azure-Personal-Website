@@ -1,6 +1,6 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
-@app.route("/alvinalaphat.git")
+@app.route("/alvinalaphat.git", methods=['GET','POST'])
 def hello():
-    return "Welcome to Alvin's Personal Website!"
+    return render_template("dashboard.html")
