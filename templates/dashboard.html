@@ -27,7 +27,7 @@ body {font-family: "Open Sans"}
 and is wrapped around the whole page content, except for the footer in this example -->
 <div class="w3-content" style="max-width:1600px">
 
-  <!-- Header -->
+  Header
   <header class="w3-container w3-center w3-padding-48 w3-white">
     <h1 class="w3-xxxlarge"><b>Alvin Alaphat</b></h1>
     <h6>Welcome to my world</h6>
@@ -35,11 +35,12 @@ and is wrapped around the whole page content, except for the footer in this exam
 
   <!-- Image header -->
   <header class="w3-display-container w3-wide" id="home">
-    <img class="w3-image mySlides w3-animate-right" src="./static/images/tedx.jpg" alt="tedx" width="1600" height="500">
-    <img class="w3-image mySlides w3-animate-right" src="./static/images/service.jpg" alt="service" width="1600" height="500">
+    <img class="w3-image mySlides w3-animate-right" src="./static/images/tedx.jpg" alt="tedx" width="1600" height="400">
+    <img class="w3-image mySlides w3-animate-right" src="./static/images/service.jpg" alt="service" width="1600" height="400">
     <div class="w3-display-left w3-padding-large">
-      <h1 class="w3-text-white">Alvin's</h1>
-      <h1 class="w3-jumbo w3-text-white w3-hide-small"><b>Personal Website</b></h1>
+      <h1 class="w3-text-white">Alvin Alaphat</h1>
+      <h1 class="w3-jumbo myTextSlide w3-animate-right w3-text-white w3-hide-small"><b>Tedx Speaker</b></h1>
+      <h1 class="w3-jumbo myTextSlide w3-animate-right w3-text-white w3-hide-small"><b>Man for Others</b></h1>
       <h6><button class="w3-button w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" onclick="document.getElementById('subscribe').style.display='block'">Learn More</button></h6>
     </div>
   </header>
@@ -324,21 +325,26 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <script>
 
+// carousel
 var myIndex = 0;
 carousel();
 
 function carousel() {
   var i;
   var x = document.getElementsByClassName("mySlides");
+  var xyz = document.getElementsByClassName("myTextSlide");
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";  
+    xyz[i].style.display = "none";  
   }
   myIndex++;
   if (myIndex > x.length) {myIndex = 1}    
   x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 3000);    
+  xyz[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 5000);    
 }
 
+// useless
 document.getElementById("myBtn").click();
 function myFunction(id) {
   var x = document.getElementById(id);
